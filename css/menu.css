@@ -1,0 +1,33 @@
+#menu {
+    width: 800px;
+    height: 50px;
+    clear: both;
+    background-color: #eee;
+    border-bottom: 4px solid black;
+    
+}
+
+nav li {
+    list-style-type: none;
+    display: block;
+    float: left;
+    width: 160px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 20px;
+    font-weight: lighter;
+    
+}
+
+nav li a {
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+
+nav li:hover {
+    background-color: red;
+    border-left: 4px solid black;
+}

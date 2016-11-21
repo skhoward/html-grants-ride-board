@@ -7,14 +7,22 @@
     <title>NMSU Grants Ride Board</title>
 </head>
 <body>
-    <?php include('header.php'); ?>
+
+    <div class="container">
+        <div class="header">
+            
+        </div>
+        <div class="menu">
+            
+        </div>
+        <div class="main">
+            <img src="img/car.jpg"></img>
+        </div>
+    </div>
     
-    <br>
-    Welcome to Ride Board
-    <br>
-    <img src="img/car.jpg"></img>
-    
-    
-    <?php include('footer.php'); ?>
+    <!-- footer --> 
+    <div id="footer">
+        <?php include('footer.php'); ?>
+    </div>
 </body>
 </html>

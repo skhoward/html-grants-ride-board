@@ -6,10 +6,26 @@
     <meta charset="UTF-8">
     <title>NMSU Grants Ride Board</title>
 </head>
-    <?php include('header.php'); ?>
+<body>
+
+    <div class="container">
+        <div class="header">
+            
+        </div>
+        <div class="menu">
+            
+        </div>
+        <div class="left-body">
+            
+        </div>
+        <div class="right-body">
+            
+        </div>
+    </div>
     
-    This is a template!
-    
-    
-    <?php include('footer.php'); ?>
+    <!-- footer --> 
+    <div id="footer">
+        <?php include('footer.php'); ?>
+    </div>
+</body>>
 </html>
