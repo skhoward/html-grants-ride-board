@@ -1,5 +1,12 @@
+<?php require 'connections/connections.php' ?>
+<?php
+    if(isset($_POST['Register'])) {
+        
+    }
 
- 
+
+
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -30,8 +37,19 @@
         <div class="right-body">
             <form action="" method="" name="RegisterForm" id="RegisterForm">
                 <div class="formElement">
-                    
-                    
+                    <input type="text" name="First_Name" required="required" class="TField" id="First_Name" placeholder="First Name"/>
+                </div>
+                <div class="formElement">
+                    <input type="text" name="Last_Name" required="required" class="TField" id="Last_Name" placeholder="Last Name"/>
+                </div>
+                <div class="formElement">
+                    <input type="text" name="Email" required="required" class="TField" id="Email" placeholder="Email"/>
+                </div>
+                <div class="formElement">
+                    <input type="text" name="Password" required="required" class="TField" id="Password" placeholder="Password"/>
+                </div>
+                <div class="formElement">
+                    <input name="Register" type="submit" class="button" id="Register" value="Register" />
                 </div>
             </form>
         </div>
