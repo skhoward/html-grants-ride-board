@@ -1,3 +1,5 @@
+
+ 
 <!doctype html>
 <html lang="en">
 <head>
@@ -26,7 +28,12 @@
             
         </div>
         <div class="right-body">
-            
+            <form action="" method="" name="RegisterForm" id="RegisterForm">
+                <div class="formElement">
+                    
+                    
+                </div>
+            </form>
         </div>
         <div class="footer">
        

@@ -38,6 +38,18 @@ body {
     float: right;
     height: auto;
 }
+.formElement {
+    width: 350px;
+    margin: 6px auto;
+    height: 40px;
+}
+.TField {
+    width: 350px;
+    height: 35px;
+    border: 1px solid b#e0dfdf;
+    padding-left: 6px;
+    font-size: 17px;
+}
 .footer {
     font-size: 25px;
     height: 100px;
