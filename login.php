@@ -12,13 +12,22 @@ if(isset($_POST['Login'])) {
 //   $results = $local->query($query) or die($local->error);
 
     $result =$local->query("SELECT UserID FROM users WHERE Email='$Email' AND Password='$PW' LIMIT 1");
+    $row_cnt = $result->num_rows;
     
-    #$row = $result->fetch_array(MYSQLI_BOTH);
-    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-    echo 'userId = '.$row['UserID'];
-       
-    $_SESSION["UserID"] = $row['UserID'];
-    #header('Location: account.php');
+    if($row_cnt == 1){
+        
+        #$row = $result->fetch_array(MYSQLI_BOTH);
+        $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+        echo 'userId = '.$row['UserID'];
+           
+        $_SESSION["UserID"] = $row['UserID'];
+        #header('Location: account.php');
+    
+    } else {
+        echo 'User not found';
+    }
+    
+    
 }
 
 ?>
