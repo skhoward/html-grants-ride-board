@@ -1,16 +1,33 @@
 <?php require 'connections/connections.php' ?>
-<?php
+<?php print_r($_POST);
     if(isset($_POST['Register'])) {
-        
+       
+       session_start();
+       
+       $FName = $_POST['First_Name'];
+       $LName = $_POST['Last_Name'];
+       $Email = $_POST['Email'];
+       $PW = $_POST['Password'];
+       
+       $query = "INSERT INTO users (Fname, Lname, Email, Password) VALUES ('$FName', '$LName','$Email', '$PW')";
+       $results = $local->query($query) or die($local->error);
+       
+    //   $sql = $connection->query("INSERT INTO user (Fname, Lname, Email, Password) Values ('$FName', '$LName','$Email', '$PW')");
+       
+    //   header('Location: Login.php');
+       
+       
+       //$query = "INSERT INTO users (Fname, Lname, Email, Password) VALUES ('$FName', '$LName', '$Email', $PW)";
+	   //$results = $local->query($query) or die($local->error);
+
+     
     }
-
-
 
 ?>
 <!doctype html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="css/styles.css" type="text/css" />
+    <link rel="stylesheet" href="css/info.css" type="text/css" />
     <link rel="stylesheet" href="css/menu.css" type="text/css" />
     <meta charset="UTF-8">
     <title>Register</title>
@@ -35,7 +52,7 @@
             
         </div>
         <div class="right-body">
-            <form action="" method="" name="RegisterForm" id="RegisterForm">
+            <form action="" method="post" name="RegisterForm" id="RegisterForm">
                 <div class="formElement">
                     <input type="text" name="First_Name" required="required" class="TField" id="First_Name" placeholder="First Name"/>
                 </div>
