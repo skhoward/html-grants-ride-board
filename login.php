@@ -1,27 +1,25 @@
-<?php require 'connections/connections.php'; ?>
-
 <?php 
+require 'connections/connections.php'; 
+@session_start();
     // print_r($_POST);
-    if(isset($_POST['Login'])) {
-       
 
-       
+if(isset($_POST['Login'])) {
 
-        $Email = $_POST['Email'];
-        $PW = $_POST['Password'];
-       
-    //   $query = "INSERT INTO users (Fname, Lname, Email, Password) VALUES ('$FName', '$LName','$Email', '$PW')";
-    //   $results = $local->query($query) or die($local->error);
+    $Email = $_POST['Email'];
+    $PW = $_POST['Password'];
    
-        $result =$local->query("SELECT * FROM users WHERE Email='$Email' AND Password='$PW'");
-        
-        $row = $result->fetch_array(MYSQLI_BOTH);
-        
-        session_start();
+//   $query = "INSERT INTO users (Fname, Lname, Email, Password) VALUES ('$FName', '$LName','$Email', '$PW')";
+//   $results = $local->query($query) or die($local->error);
+
+    $result =$local->query("SELECT UserID FROM users WHERE Email='$Email' AND Password='$PW' LIMIT 1");
+    
+    #$row = $result->fetch_array(MYSQLI_BOTH);
+    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    echo 'userId = '.$row['UserID'];
        
-        $_SESSION["UserID"] = $row['UserID'];
-        header('Location: account.php');
-    }
+    $_SESSION["UserID"] = $row['UserID'];
+    #header('Location: account.php');
+}
 
 ?>
  
