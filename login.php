@@ -18,10 +18,10 @@ if(isset($_POST['Login'])) {
         
         #$row = $result->fetch_array(MYSQLI_BOTH);
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-        echo 'userId = '.$row['UserID'];
+        #echo 'userId = '.$row['UserID'];
            
         $_SESSION["UserID"] = $row['UserID'];
-        #header('Location: account.php');
+        header('Location: account.php');
     
     } else {
         echo 'User not found';

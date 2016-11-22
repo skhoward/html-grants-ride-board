@@ -1,6 +1,7 @@
 <?php require 'connections/connections.php' ?>
 <?php 
     session_start();
+    print_r($_SESSION);
 ?>
 
 <!doctype html>
