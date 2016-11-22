@@ -7,7 +7,8 @@
 
         $Email = $_POST['Email'];
         $PW = $_POST['Password'];
-        $result = $local->query("SELECT * FROM users WHERE Email='$Email' AND Password='$PW'");
+        $StorePassword = password_hash($PW, PASSWORD_BCRYPT, array('cost' => 10));
+        $result = $local->query("SELECT * FROM users WHERE Email='$Email' AND Password='$StorePassword'"); // Password='$PW'
         
         # look to see that we got a UserID
         $row_cnt = $result->num_rows;
