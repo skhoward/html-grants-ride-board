@@ -1,27 +1,30 @@
 <?php require 'connections/connections.php'; ?>
 <?php 
-    // print_r($_POST);
+    print_r($_POST);
     if(isset($_POST['Register'])) {
        
-       session_start();
+    //   session_start();
        
        $FName = $_POST['First_Name'];
        $LName = $_POST['Last_Name'];
        $Email = $_POST['Email'];
        $PW = $_POST['Password'];
        
-       $query = "INSERT INTO users (Fname, Lname, Email, Password) VALUES ('$FName', '$LName','$Email', '$PW')";
+       $StorePassword = password_hash($PW, PASSWORD_BCRYPT, array('cost' => 10));
+       
+       $query = "INSERT INTO users (Fname, Lname, Email, Password) VALUES ('$FName', '$LName','$Email', '$StorePassword')";
        $results = $local->query($query) or die($local->error);
-   
-
+       //header('Location: login.php');
+        echo 'UserID = '.$row['UserID'];
+        print_r($_SESSION);
     }
 
 ?>
 <!doctype html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="css/info.css" type="text/css" />
-    <link rel="stylesheet" href="css/menu.css" type="text/css" />
+    <link rel="stylesheet" href="/../css/info.css" type="text/css" />
+    <link rel="stylesheet" href="/../css/menu.css" type="text/css" />
     <meta charset="UTF-8">
     <title>Register</title>
 </head>

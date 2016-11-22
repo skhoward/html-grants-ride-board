@@ -1,3 +1,12 @@
+<?php require '../connections/connections.php' ?>
+<?php 
+    session_start();
+    if(isset($_SESSION["UserID"])) {
+        
+    } else {
+        header('Location: ../login.php');
+    }
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,6 +16,6 @@
     <title>Index Page for Aggies</title>
 </head>
 <body>
-    
+    Welcome Riders and Drivers
 </body>
 </html>

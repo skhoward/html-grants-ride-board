@@ -1,26 +1,20 @@
 <?php require 'connections/connections.php'; ?>
 
 <?php 
-    // print_r($_POST);
+    print_r($_POST);
+    
     if(isset($_POST['Login'])) {
-       
-
-       
 
         $Email = $_POST['Email'];
         $PW = $_POST['Password'];
-       
-    //   $query = "INSERT INTO users (Fname, Lname, Email, Password) VALUES ('$FName', '$LName','$Email', '$PW')";
-    //   $results = $local->query($query) or die($local->error);
-   
-        $result =$local->query("SELECT * FROM users WHERE Email='$Email' AND Password='$PW'");
-        
+        $result = $local->query("SELECT * FROM users WHERE Email='$Email' AND Password='$PW'");
         $row = $result->fetch_array(MYSQLI_BOTH);
         
-        session_start();
+        // session_start();
        
         $_SESSION["UserID"] = $row['UserID'];
-        header('Location: account.php');
+        echo 'UserID = '.$row['UserID'];
+        //header('Location: account.php');
     }
 
 ?>
@@ -31,7 +25,7 @@
     <link rel="stylesheet" href="css/info.css" type="text/css" />
     <link rel="stylesheet" href="css/menu.css" type="text/css" />
     <meta charset="UTF-8">
-    <title>Register</title>
+    <title>Login</title>
 </head>
 <body>
 
