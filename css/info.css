@@ -26,17 +26,20 @@ body {
 }
 
 .main {
-    
+    width: 700px;
+    color: red;
+    margin: 0 auto;
 }
 .left-body {
-    width: 350px;
+    width: 400px;
     float: left;
-    height: 400px;
+    height: 800px;
 }
 .right-body {
-    width: 450px;
+    width: 400px;
     float: right;
     height: auto;
+    margin: 0 auto;
 }
 .formElement {
     width: 350px;
@@ -56,7 +59,14 @@ body {
     height: 50px;
     background-color: green;
 }
-
+.faq {
+    background-color: #ededed;
+    padding: 10px;
+    margin-bottom: 4px;
+    border: 1px solid grey;
+    border-radius: 15px;
+    color: black;
+}
 .footer {
     font-size: 25px;
     height: 100px;

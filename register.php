@@ -1,6 +1,6 @@
 <?php require 'connections/connections.php'; ?>
 <?php 
-    print_r($_POST);
+   // print_r($_POST);
     if(isset($_POST['Register'])) {
        
     //   session_start();
@@ -12,7 +12,7 @@
        
        $StorePassword = password_hash($PW, PASSWORD_BCRYPT, array('cost' => 10));
        
-       $query = "INSERT INTO users (Fname, Lname, Email, Password) VALUES ('$FName', '$LName','$Email', '$StorePassword')";
+       $query = "INSERT INTO users (Fname, Lname, Email, Password) VALUES ('$FName', '$LName','$Email', '$PW')";
        $results = $local->query($query) or die($local->error);
        //header('Location: login.php');
         echo 'UserID = '.$row['UserID'];
@@ -23,8 +23,8 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="/../css/info.css" type="text/css" />
-    <link rel="stylesheet" href="/../css/menu.css" type="text/css" />
+    <link rel="stylesheet" href="css/info.css" type="text/css" />
+    <link rel="stylesheet" href="css/menu.css" type="text/css" />
     <meta charset="UTF-8">
     <title>Register</title>
 </head>
@@ -38,8 +38,12 @@
             <div id="menu">
                 <nav>
                     <ul id="cssmenu">
-                        <li><a href="#">Register</a></li>
-                        <li><a href="#">Log In</a></li>
+                        <li><a href="register">Register</a></li>
+                        <li><a href="login">Log In</a></li>
+                        <li><a href="faq">FAQ</a></li>
+                    </ul>
+                    <ul id="logout">
+                        <li><a href="logout">Log out</a></a></li>    
                     </ul>
                 </nav>
             </div>

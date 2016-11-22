@@ -1,6 +1,6 @@
 <?php 
-require 'connections/connections.php';
-print_r($_SESSION);
+    require 'connections/connections.php';
+    //print_r($_SESSION);
  
     //session_start();
     if(isset($_SESSION["UserID"])) {
@@ -29,8 +29,12 @@ print_r($_SESSION);
             <div id="menu">
                 <nav>
                     <ul id="cssmenu">
-                        <li><a href="#">Register</a></li>
-                        <li><a href="#">Log In</a></li>
+                        <li><a href="drivers">Drivers</a></li>
+                        <li><a href="riders">Riders</a></a></li>
+                        <li><a href="profile">Profile</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="logout">Log out</a></a></li>    
                     </ul>
                 </nav>
             </div>

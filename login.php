@@ -1,20 +1,20 @@
 <?php require 'connections/connections.php'; ?>
 
 <?php 
-    print_r($_POST);
+    // print_r($_POST);
     
     if(isset($_POST['Login'])) {
         $Email = $_POST['Email'];
         $PW = $_POST['Password'];
-        $StorePassword = password_hash($PW, PASSWORD_BCRYPT, array('cost' => 10));
-        $result = $local->query("SELECT * FROM users WHERE Email='$Email' AND Password='$PW'"); // Password='$PW'
+        
+        // $StorePassword = password_hash($PW, PASSWORD_BCRYPT, array('cost' => 10));
+        $result = $local->query("SELECT * FROM users WHERE Email='$Email'"); 
         
         # look to see that we got a UserID
         $row_cnt = $result->num_rows;
         if($row_cnt == 1){
             $row = $result->fetch_array(MYSQLI_BOTH);
             $_SESSION["UserID"] = $row['UserID'];
-            #echo 'UserId'.$row['UserID'];
             header('Location:account');
         
         # We did not find a UserId so we echo an error
@@ -43,14 +43,21 @@
             <div id="menu">
                 <nav>
                     <ul id="cssmenu">
-                        <li><a href="#">Register</a></li>
-                        <li><a href="#">Log In</a></li>
+                        <li><a href="register">Register</a></li>
+                        <li><a href="login">Log In</a></li>
+                        <li><a href="faq">FAQ</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="logout">Log out</a></a></li>    
                     </ul>
                 </nav>
             </div>
         </div>
         <div class="left-body">
-            
+            <p>
+                    
+
+            </p>
         </div>
         <div class="right-body">
             <form action="" method="post" name="LoginForm" id="LoginForm">

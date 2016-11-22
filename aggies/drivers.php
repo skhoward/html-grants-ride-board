@@ -10,12 +10,39 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="css/styles.css" type="text/css" />
+    <link rel="stylesheet" href="css/info.css" type="text/css" />
     <link rel="stylesheet" href="css/menu.css" type="text/css" />
     <meta charset="UTF-8">
-    <title>Riders Page</title>
+    <title>Register</title>
 </head>
 <body>
+
+    <div class="container">
+        <div class="header">
+            
+        </div>
+        <div class="menu">
+            <div id="menu">
+                  <nav>
+                    <ul id="cssmenu">
+                        <li><a href="aggies/drivers">Drivers</a></li>
+                        <li><a href="aggies/riders">Riders</a></a></li>
+                        <li><a href="faq">FAQ</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="logout">Log out</a></a></li>    
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="main">
+            Drivers
+       
+        </div>
+        <div class="footer">
+       
+        </div>
+    </div>
     
+
 </body>
-</html>

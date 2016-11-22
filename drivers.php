@@ -1,8 +1,11 @@
+<?php require 'connections/connections.php' ?>
 <?php 
-    require 'connections/connections.php';
     session_start();
-    unset($_SESSION["UserID"]);
-    session_destroy();
+    if(isset($_SESSION["UserID"])) {
+        
+    } else {
+        header('Location: login.php');
+    }
 ?>
 <!doctype html>
 <html lang="en">
@@ -22,9 +25,9 @@
             <div id="menu">
                 <nav>
                     <ul id="cssmenu">
-                        <li><a href="register">Register</a></li>
-                        <li><a href="login">Log In</a></li>
-                        <li><a href="faq">FAQ</a></li>
+                        <li><a href="drivers">Drivers</a></li>
+                        <li><a href="riders">Riders</a></a></li>
+                        <li><a href="profile">Profile</a></li>
                     </ul>
                     <ul>
                         <li><a href="logout">Log out</a></a></li>    
@@ -32,11 +35,9 @@
                 </nav>
             </div>
         </div>
-        <div class="left-body">
-            <h2>You have logged out!</h2>
-        </div>
-        <div class="right-body">
-            
+        <div class="main">
+            <h2>Driver</h2>
+       
         </div>
         <div class="footer">
        
