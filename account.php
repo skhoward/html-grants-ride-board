@@ -1,11 +1,14 @@
-<?php require 'connections/connections.php' ?>
-// <?php 
-    // session_start();
-    // if(isset($_SESSION["UserID"])) {
+<?php 
+require 'connections/connections.php';
+print_r($_SESSION);
+ 
+    //session_start();
+    if(isset($_SESSION["UserID"])) {
         
-    // } else {
-    //     header('Location: login.php');
-    // }
+    } else {
+        header('Location: login.php');
+    }
+    
 ?>
 
 <!doctype html>

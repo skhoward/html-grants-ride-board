@@ -18,4 +18,6 @@
     } 
     echo "Connected successfully to (".$db->host_info.")";
     
+    @session_start();
+    
     ?>

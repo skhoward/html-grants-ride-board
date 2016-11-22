@@ -8,13 +8,20 @@
         $Email = $_POST['Email'];
         $PW = $_POST['Password'];
         $result = $local->query("SELECT * FROM users WHERE Email='$Email' AND Password='$PW'");
-        $row = $result->fetch_array(MYSQLI_BOTH);
         
-        // session_start();
-       
-        $_SESSION["UserID"] = $row['UserID'];
-        echo 'UserID = '.$row['UserID'];
-        //header('Location: account.php');
+        # look to see that we got a UserID
+        $row_cnt = $result->num_rows;
+        if($row_cnt == 1){
+            $row = $result->fetch_array(MYSQLI_BOTH);
+            $_SESSION["UserID"] = $row['UserID'];
+            #echo 'UserId'.$row['UserID'];
+            header('Location:account');
+        
+        # We did not find a UserId so we echo an error
+        } else {
+            echo 'User not found';
+        }
+        
     }
 
 ?>
