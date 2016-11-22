@@ -1,13 +1,13 @@
-<?php 
+<?php require 'connections/connections.php'; ?>
 
+<?php 
     print_r($_POST);
     
     if(isset($_POST['Login'])) {
-
         $Email = $_POST['Email'];
         $PW = $_POST['Password'];
         $StorePassword = password_hash($PW, PASSWORD_BCRYPT, array('cost' => 10));
-        $result = $local->query("SELECT * FROM users WHERE Email='$Email' AND Password='$StorePassword'"); // Password='$PW'
+        $result = $local->query("SELECT * FROM users WHERE Email='$Email' AND Password='$PW'"); // Password='$PW'
         
         # look to see that we got a UserID
         $row_cnt = $result->num_rows;
@@ -22,39 +22,7 @@
             echo 'User not found';
         }
         
-// =======
-// require 'connections/connections.php'; 
-// @session_start();
-//     // print_r($_POST);
-
-// if(isset($_POST['Login'])) {
-
-//     $Email = $_POST['Email'];
-//     $PW = $_POST['Password'];
-   
-// //   $query = "INSERT INTO users (Fname, Lname, Email, Password) VALUES ('$FName', '$LName','$Email', '$PW')";
-// //   $results = $local->query($query) or die($local->error);
-
-//     $result =$local->query("SELECT UserID FROM users WHERE Email='$Email' AND Password='$PW' LIMIT 1");
-//     $row_cnt = $result->num_rows;
-    
-//     if($row_cnt == 1){
-        
-//         #$row = $result->fetch_array(MYSQLI_BOTH);
-//         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-//         #echo 'userId = '.$row['UserID'];
-           
-//         $_SESSION["UserID"] = $row['UserID'];
-//         header('Location: account.php');
-    
-//     } else {
-//         echo 'User not found';
-// >>>>>>> b83a9342392983bb75ae3829f780804c3fd8cbf0
-//     }
-    
-    
-// }
-
+    }
 ?>
  
 <!doctype html>
@@ -69,7 +37,7 @@
 
     <div class="container">
         <div class="header">
-            Test Git?
+            
         </div>
         <div class="menu">
             <div id="menu">
