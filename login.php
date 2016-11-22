@@ -1,22 +1,30 @@
 <?php require 'connections/connections.php'; ?>
+
 <?php 
     // print_r($_POST);
-    if(isset($_POST['Register'])) {
+    if(isset($_POST['Login'])) {
        
-       session_start();
-       
-       $FName = $_POST['First_Name'];
-       $LName = $_POST['Last_Name'];
-       $Email = $_POST['Email'];
-       $PW = $_POST['Password'];
-       
-       $query = "INSERT INTO users (Fname, Lname, Email, Password) VALUES ('$FName', '$LName','$Email', '$PW')";
-       $results = $local->query($query) or die($local->error);
-   
 
+       
+
+        $Email = $_POST['Email'];
+        $PW = $_POST['Password'];
+       
+    //   $query = "INSERT INTO users (Fname, Lname, Email, Password) VALUES ('$FName', '$LName','$Email', '$PW')";
+    //   $results = $local->query($query) or die($local->error);
+   
+        $result =$local->query("SELECT * FROM users WHERE Email='$Email' AND Password='$PW'");
+        
+        $row = $result->fetch_array(MYSQLI_BOTH);
+        
+        session_start();
+       
+        $_SESSION["UserID"] = $row['UserID'];
+        header('Location: account.php');
     }
 
 ?>
+ 
 <!doctype html>
 <html lang="en">
 <head>
@@ -45,13 +53,7 @@
             
         </div>
         <div class="right-body">
-            <form action="" method="post" name="RegisterForm" id="RegisterForm">
-                <div class="formElement">
-                    <input type="text" name="First_Name" required="required" class="TField" id="First_Name" placeholder="First Name"/>
-                </div>
-                <div class="formElement">
-                    <input type="text" name="Last_Name" required="required" class="TField" id="Last_Name" placeholder="Last Name"/>
-                </div>
+            <form action="" method="post" name="LoginForm" id="LoginForm">
                 <div class="formElement">
                     <input type="text" name="Email" required="required" class="TField" id="Email" placeholder="Email"/>
                 </div>
@@ -59,7 +61,7 @@
                     <input type="text" name="Password" required="required" class="TField" id="Password" placeholder="Password"/>
                 </div>
                 <div class="formElement">
-                    <input name="Register" type="submit" class="button" id="Register" value="Register" />
+                    <input name="Login" type="submit" class="button" id="Login" value="Login" />
                 </div>
             </form>
         </div>
