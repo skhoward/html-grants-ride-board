@@ -23,8 +23,14 @@
  
 
 ##NMSU Specs
-+ Color code: #8c0b42
++ Color code Crimson: #8c0b42
++ Color code Web Gray: #ccc
++ Color code Web Light Gray: #ededed
++ Color support yellow: #ffcc33
++ Color support teal: #006c76
++ Color support blue: #004386
++ Color support purple: #7f4498
  
 ##Links
-+ [NMSU Grants Ride Board]()
++ [NMSU Grants Ride Board](https://grants-ride-board-zrsmith75.c9users.io/register)
 + [Project Todo List](https://github.com/zrsmith75/ICT435_Senior_Project/blob/master/Todo.md)
