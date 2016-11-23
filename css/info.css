@@ -27,7 +27,7 @@ body {
 
 .main {
     width: 700px;
-    color: red;
+    color: #8c0b42;
     margin: 0 auto;
 }
 .left-body {
@@ -66,6 +66,7 @@ body {
     border: 1px solid grey;
     border-radius: 15px;
     color: black;
+    font-size: 18px;
 }
 .logout {
     text-align: center;

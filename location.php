@@ -42,7 +42,7 @@
         </div>
            <div class="map_location">
                <div id="map">
-                   <iframe id="google_map" width="425" height="350" scrolling="0" marginheight="0" marginwidth="0" src="https://maps.google.co.uk?outpust=embed" frameborder="0"></iframe>
+                   <iframe id="google_map" width="700" height="500" scrolling="0" marginheight="0" marginwidth="0" src="https://maps.google.com?output=embed" frameborder="0"></iframe>
                </div>
                
            </div>
@@ -51,7 +51,22 @@
        
         </div>
     </div>
+    <script>
     
+        var c = function(pos) {
+        var lat = pos.coords.latitude,
+          long = pos.coords.longitude,
+          coords = lat + ', ' + long;
+
+        document.getElementById('google_map').setAttribute('src', 'https://maps.google.com/?q=' + coords + '&z=15&output=embed');
+    }
+    
+        document.getElementById('get_location').onclick = function() {
+            navigator.geolocation.getCurrentPosition(c);
+            return false;
+        }
+        
+    </script>
 
 </body>
 </html>
