@@ -57,7 +57,7 @@ body {
     font-size: 25px;
     width:200px;
     height: 50px;
-    background-color: green;
+    background-color: #8c0b42;
 }
 .faq {
     background-color: #ededed;
@@ -67,7 +67,19 @@ body {
     border-radius: 15px;
     color: black;
 }
+.logout {
+    text-align: center;
+}
+
 .footer {
     font-size: 25px;
     height: 100px;
+    background-color: #ededed;
+    bottom: 0;
+    position: fixed;
+}
+.nope {
+    font-size: 22px;
+    line-height: 50px;
+    font-weight: bold;
 }

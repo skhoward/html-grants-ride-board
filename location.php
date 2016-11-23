@@ -1,8 +1,11 @@
+<?php require 'connections/connections.php' ?>
 <?php 
-    require 'connections/connections.php';
     session_start();
-    unset($_SESSION["UserID"]);
-    session_destroy();
+    if(isset($_SESSION["UserID"])) {
+        
+    } else {
+        header('Location: login.php');
+    }
 ?>
 <!doctype html>
 <html lang="en">
@@ -10,7 +13,7 @@
     <link rel="stylesheet" href="css/info.css" type="text/css" />
     <link rel="stylesheet" href="css/menu.css" type="text/css" />
     <meta charset="UTF-8">
-    <title>Register</title>
+    <title>Get My Location</title>
 </head>
 <body>
 
@@ -26,16 +29,24 @@
                         <li><a href="login">Log In</a></li>
                         <li><a href="faq">FAQ</a></li>
                     </ul>
-                    <ul>
+                    <ul  id="cssmenu">
                         <li><a href="logout">Log out</a></a></li>    
                     </ul>
                 </nav>
             </div>
         </div>
-        <div class="logout">
-            <h2>You have logged out!</h2>
+       
+        <div class="main">
+             <div class="map_location">
+            <input type="submit" name="get_location" class="button" id="get_location" value="Get Location" />
         </div>
-     
+           <div class="map_location">
+               <div id="map">
+                   <iframe id="google_map" width="425" height="350" scrolling="0" marginheight="0" marginwidth="0" src="https://maps.google.co.uk?outpust=embed" frameborder="0"></iframe>
+               </div>
+               
+           </div>
+        </div>
         <div class="footer">
        
         </div>

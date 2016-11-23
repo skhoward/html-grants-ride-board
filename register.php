@@ -42,16 +42,21 @@
                         <li><a href="login">Log In</a></li>
                         <li><a href="faq">FAQ</a></li>
                     </ul>
-                    <ul id="logout">
-                        <li><a href="logout">Log out</a></a></li>    
-                    </ul>
+                    <!--<ul id="logout">-->
+                    <!--    <li><a href="logout">Log out</a></a></li>    -->
+                    <!--</ul>-->
                 </nav>
             </div>
         </div>
         <div class="left-body">
-            
+            <img src="img/car.jpg" width="800px" alt="">
         </div>
         <div class="right-body">
+            <br><br><br><br>
+            <br><br><br><br>
+            <br><br><br><br>
+            <br><br><br><br>
+            
             <form action="" method="post" name="RegisterForm" id="RegisterForm">
                 <div class="formElement">
                     <input type="text" name="First_Name" required="required" class="TField" id="First_Name" placeholder="First Name"/>
