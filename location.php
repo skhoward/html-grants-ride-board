@@ -25,24 +25,24 @@
             <div id="menu">
                 <nav>
                     <ul id="cssmenu">
-                        <li><a href="register">Register</a></li>
-                        <li><a href="login">Log In</a></li>
-                        <li><a href="faq">FAQ</a></li>
+                        <li><a href="location">Get Location</a></li>
+                        <li><a href="riders">Riders</a></a></li>
+                        <li><a href="profile">Profile</a></li>
                     </ul>
-                    <ul  id="cssmenu">
+                    <ul>
                         <li><a href="logout">Log out</a></a></li>    
                     </ul>
                 </nav>
             </div>
         </div>
        
-        <div class="main">
+        <div class="main_location">
              <div class="map_location">
             <input type="submit" name="get_location" class="button" id="get_location" value="Get Location" />
         </div>
            <div class="map_location">
                <div id="map">
-                   <iframe id="google_map" width="700" height="500" scrolling="0" marginheight="0" marginwidth="0" src="https://maps.google.com?output=embed" frameborder="0"></iframe>
+                   <iframe id="google_map" width="800" height="500" scrolling="0" marginheight="0" marginwidth="0" src="https://maps.google.com?output=embed" frameborder="0"></iframe>
                </div>
                
            </div>

@@ -25,7 +25,7 @@
             <div id="menu">
                 <nav>
                     <ul id="cssmenu">
-                        <li><a href="drivers">Drivers</a></li>
+                        <li><a href="location">Get Location</a></li>
                         <li><a href="riders">Riders</a></a></li>
                         <li><a href="profile">Profile</a></li>
                     </ul>
